@@ -28,7 +28,7 @@ const Footer = () => {
                     Quick Links
                 </h3>
                 <ul className="grid gap-x-8 sm:grid-cols-2  md:flex">
-                    {footerLinks.map((link) => (
+                    {footerLinks.map(link => (
                         <li key={link.name}>
                             <Link
                                 to={link.link}
@@ -41,7 +41,7 @@ const Footer = () => {
                 </ul>
                 <div className="my-4 flex items-center gap-6">
                     <a
-                        href="https://github.com/HarshRaj1260/todo-frontend"
+                        href="https://github.com/HarshRaj1260/to_do_list_frontend"
                         target="_blank"
                         rel="noopener noreferrer nofollow"
                         className="text-gray-400 hover:text-gray-300"
