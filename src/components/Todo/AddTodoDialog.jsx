@@ -17,19 +17,19 @@ const AddTodoDialog = ({ isOpen, setIsOpen }) => {
         setIsOpen(false);
     };
 
-    const formSubmit = (e) => {
+    const formSubmit = e => {
         e.preventDefault();
         axios
             .post("/todos", {
                 name: values.name,
             })
-            .then((res) => {
+            .then(res => {
                 if (res.todo) {
                     setTodos([...todos, res.todo]);
                 }
                 closeModal();
             })
-            .catch((err) => {
+            .catch(err => {
                 console.log("Unable to add todo:", err);
                 toast.error("Unable to add todo");
                 closeModal();
@@ -119,7 +119,7 @@ const AddTodoDialog = ({ isOpen, setIsOpen }) => {
                                             className="mt-1 block w-full rounded-md border-[1px] border-gray-200 p-1 shadow-sm focus:border-green-500 focus:outline-none focus:ring-green-500 sm:text-sm"
                                             minLength={1}
                                             maxLength={2048}
-                                            onInput={(e) =>
+                                            onInput={e =>
                                                 setValues({
                                                     ...values,
                                                     name: e.target.value,
